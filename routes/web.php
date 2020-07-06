@@ -17,8 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pizzas', function () {
-    return view('pizzas');
-    //return 'pizzas!';  //return text/html
-    // return ['name' => 'veg pizzas', 'base' => 'classic']; //return json
-});
+Route::get('/pizzas', 'PizzaController@index');
+Route::get('/pizzas/create', 'PizzaController@create');
+Route::post('/pizzas', 'PizzaController@store');
+Route::get('/pizzas/{id}', 'PizzaController@show');
+Route::delete('/pizzas/{id}', 'PizzaController@destory');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
