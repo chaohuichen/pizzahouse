@@ -7,6 +7,11 @@ use App\Pizza;
 
 class PizzaController extends Controller
 {
+    //protect every single routes
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     public function index()
     {
         //::all()
